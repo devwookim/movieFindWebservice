@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Top10</title>
+</head>
+<body>
+<h1>TOP 10 Movie</h1>
+<h2>Input date you want to see</h2>
+<h3>Ex) 20220101</h3>
+<form method="POST" action="/move">
+  <input type="text" name="date" th:value="${date}"/>
+  <input type="submit" value="Click"/>
+</form>
+</body>
+</html>
