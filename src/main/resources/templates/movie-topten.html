@@ -7,10 +7,11 @@
 <body>
 <h1>TOP 10 Movie</h1>
 <h2>Input date you want to see</h2>
-<h3>Ex) 20220101</h3>
+<h3>Ex) 20230627</h3>
 <form method="POST" action="/move">
   <input type="text" name="date" th:value="${date}"/>
-  <input type="submit" value="Click"/>
+  <input type="submit" value="확인"/>
+  <input type="button" value="뒤로가기" onclick="history.back();" /><!--history.go(-1)-->
 </form>
 </body>
 </html>
