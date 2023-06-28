@@ -18,6 +18,7 @@ public class DailyMovieController {
     public String movieTopTen(){
         return "movie-topten";
     }
+
     @PostMapping("/move")
     @ResponseBody
     public  String movie(@RequestParam("date") String date){
