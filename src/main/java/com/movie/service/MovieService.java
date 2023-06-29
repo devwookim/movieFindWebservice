@@ -2,6 +2,7 @@ package com.movie.service;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -21,6 +22,9 @@ import java.util.Map;
 @Service
 public class MovieService {
 
+    @Value("${key}")
+    private String key ;
+
     public String topTenMovie(String targetDt){
         HashMap<String, Object> result = new HashMap<String, Object>();
         String jsonInString = "";
@@ -32,7 +36,7 @@ public class MovieService {
             HttpEntity<?> entity = new HttpEntity<>(header);
             String url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json";
 
-            UriComponents uri = UriComponentsBuilder.fromHttpUrl(url+"?"+"key=acbfabbfae486473f03fb1c1ec1e076d&targetDt="+targetDt).build();
+            UriComponents uri = UriComponentsBuilder.fromHttpUrl(url+"?key="+key+"&targetDt="+targetDt).build();
 
 
             //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
@@ -48,7 +52,7 @@ public class MovieService {
             LinkedHashMap lm = (LinkedHashMap) resultMap.getBody().get("boxOfficeResult");
             ArrayList<Map> dboxofficeList = (ArrayList<Map>) lm.get("dailyBoxOfficeList");
             LinkedHashMap mnList = new LinkedHashMap<>();
-            //System.out.println(dboxofficeList);
+
             for (Map obj : dboxofficeList){
                 mnList.put(obj.get("rank"), obj.get("movieNm"));
             }
