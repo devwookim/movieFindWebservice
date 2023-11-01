@@ -20,9 +20,9 @@ public class DailyMovieController {
     }
 
     @PostMapping("/move")
-    @ResponseBody
+    @ResponseBody // 자바객체를 HTTP요청의 바디내용으로 매핑하여 클라이언트로 전송한다.
     public  String movie(@RequestParam("date") String date){
-        movieService.topTenMovie(date);
-        return movieService.topTenMovie(date);
+        String result = movieService.topTenMovie(date);
+        return result;
     }
 }
