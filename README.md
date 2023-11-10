@@ -3,9 +3,9 @@
 
 ## ✅프로젝트 설명
 
--영화진흥위원회 공공 API 끌어오기
--Controller, Service 정도로 나누어 역할 분리
--간단한 화면 구성 후 입력한 날짜에 대한 1~10위 영화 순위를 제공해줌
+- 영화진흥위원회 공공 API 끌어오기
+- Controller, Service 정도로 나누어 역할 분리
+- 간단한 화면 구성 후 입력한 날짜에 대한 1~10위 영화 순위를 제공해줌<br>
 
 ## ✅프로젝트 실행
 ![무비1](https://github.com/devwookim/movieFindWebservice/assets/123798587/6fe2b6ee-eec3-4727-a47f-884615b8e850)
